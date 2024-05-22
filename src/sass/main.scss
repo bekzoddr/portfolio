@@ -1,0 +1,63 @@
+@import './components/navbar';
+@import './components/about';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+li, a{
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+a{
+    align-items: center;
+}
+
+
+ul {
+    display: flex;
+    align-items: start;
+
+    li {
+        padding: 6px 0;
+
+        a {
+            position: relative;
+            display: block;
+            padding: 4px 0;
+            color: #ecf0f1;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 100%;
+                left: 0;
+                width: 90%;
+                height: 1px;
+                background: #3498db;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s;
+            }
+
+            &:hover {
+                color: #95a5a6;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
+}
